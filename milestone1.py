@@ -96,7 +96,7 @@ def find_path(number_of_vertices, start, end, graph, coordinates, weight, heuris
                     cost = n[1]
 
                     vnew = cost + cost_to_come[selected_node]
-                    if vnew < cost_to_come[neighbor - 1]:
+                    if vnew < cost_to_come[neighbor]:
                         #print('Replacing the current entry for', neighbor, 'with old cost', cost_to_come[neighbor - 1],
                         #      'with new cost', vnew)
                         cost_to_come[neighbor] = vnew
@@ -104,7 +104,7 @@ def find_path(number_of_vertices, start, end, graph, coordinates, weight, heuris
                     if neighbor not in open_list:
                         open_list.append(neighbor)
         else:
-
+            
         itr_count += 1
 
     path_cost = cost_to_come[end]
